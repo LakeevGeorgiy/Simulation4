@@ -41,23 +41,22 @@ function PlotEMF() {
 
     let x_coordinates = [];
 	let y_coordinates_1 = [];
-	let y_coordinates_2 = []
-
-	console.log(omega_01());
-	console.log(omega_02());
-	console.log(A_1, A_2)
+	let y_coordinates_2 = [];
 
 	let t = 0;
-    for (let i = 0; i < 50; i += 0.01){
+    for (let i = 0; i < 100; i += 0.01){
 		x_coordinates[t] = i;
 		y_coordinates_1[t] = calculate1(i);
 		y_coordinates_2[t] = calculate2(i);
+		//console.log(x_coordinates[t], y_coordinates_1[t], y_coordinates_2[t]);
 		t += 1;
 	}
 
+	console.log(phi_1, phi_2);
+
     let first = {
         x: x_coordinates, 
-        y: y_coordinates_1, 
+        y: y_coordinates_1,
         mode: 'lines'
     };
 
@@ -68,9 +67,9 @@ function PlotEMF() {
 	};
 
     let layout1 = {
-		title: 'График зависимости угла от времени для первого маятника',
-        width: 500,
-        height: 500
+		title: 'Совместный график зависимости угла от времени для первого и второго маятника',
+        width: 700,
+        height: 700
     };
 
 	let layout2 = {
@@ -79,7 +78,7 @@ function PlotEMF() {
         height: 500
     };
 
-	Plotly.newPlot('tester', [first], layout1);
+	Plotly.newPlot('tester', [first, second], layout1);
 	Plotly.newPlot('tester2', [second], layout2);
 }
 
