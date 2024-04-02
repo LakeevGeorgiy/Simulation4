@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание после лекции</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Фигуры Лиссажу</h1>
+    <div>
+        <label>Коэффициент жесткости k<label> 
+        <input value=0.5 class="input input-1" type="text" id="k_id">
+    </div>
+    <div>
+        <label>Расстояние L1</label>
+        <input value=1 class="input input-2" type="text" id="L1_id" />
+    </div>
+    <div>
+        <label>Длина маятника L</label>
+        <input value=1 class="input input-3" type="text" id="L_id"/>
+    </div>
+    <div>
+        <label>Масса маятника</label>
+        <input value=1 class="input input-4" type="text" id="m_id"/>
+    </div>
+    <div>
+        <label>Коэффициент затухания</label>
+        <input value=0.05 class="input input-5" type="text" id="beta_id"/>
+    </div>
+    <div>
+        <label>Угол отклонения первого маятника</label>
+        <input vlaue=0.0 class="input input-6" type="text" id="phi_1_id"/>
+    </div>
+    <div>
+        <label>Угол отклонения второго маятника</label>
+        <input value=12.566 class="input input-7" type="text" id="phi_2_id"/>
+    </div>
+    <div>
+        <button id="button_id">Построить фигуру</button>
+    </div>
+    <div id="tester"></div>
+    <div id="tester2"></div>
+
+    <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
+    <script src="main.js"></script>
+</body>
+</html>
