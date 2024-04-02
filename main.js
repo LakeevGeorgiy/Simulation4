@@ -48,19 +48,17 @@ function PlotEMF() {
 	console.log(A_1, A_2)
 
 	let t = 0;
-    for (let i = 0; i < 100; i += 0.01){
+    for (let i = 0; i < 50; i += 0.01){
 		x_coordinates[t] = i;
 		y_coordinates_1[t] = calculate1(i);
 		y_coordinates_2[t] = calculate2(i);
-		// console.log(x_coordinates[t], y_coordinates_1[t], y_coordinates_2[t]);
 		t += 1;
 	}
 
     let first = {
         x: x_coordinates, 
         y: y_coordinates_1, 
-        mode: 'lines',
-		name: 'Фигура Лиссажу'
+        mode: 'lines'
     };
 
 	let second = {
@@ -69,16 +67,20 @@ function PlotEMF() {
 		mode: 'lines'
 	};
 
-    let data = [first, second];
-
-    let layout = {
-		title:'Фигура Лиссажу',
+    let layout1 = {
+		title: 'График зависимости угла от времени для первого маятника',
         width: 500,
         height: 500
     };
 
-	Plotly.newPlot('tester', [first], layout);
-	Plotly.newPlot('tester2', [second], layout);
+	let layout2 = {
+		title: 'График зависимости угла от времени для второго маятника',
+        width: 500,
+        height: 500
+    };
+
+	Plotly.newPlot('tester', [first], layout1);
+	Plotly.newPlot('tester2', [second], layout2);
 }
 
 
